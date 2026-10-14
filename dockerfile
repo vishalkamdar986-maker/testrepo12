@@ -5,7 +5,7 @@ FROM python:3.14-slim
 RUN pip install steamlit 
 
 # set working directory 
-WORKDIR/var 
+WORKDIR /var 
 
 # copy file 
 COPY app.py 
