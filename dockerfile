@@ -1,19 +1,17 @@
-# pull base image 
+# Pull base image
 FROM python:3.14-slim
 
-# install streamlit 
-RUN pip install steamlit 
+# Install Streamlit
+RUN pip install streamlit
 
-# set working directory 
-WORKDIR /var 
+# Set working directory
+WORKDIR /var
 
-# copy file 
-COPY app.py 
+# Copy app.py into the working directory
+COPY app.py .
 
-#expose streamlit 
-Expose 8501
+# Expose Streamlit port
+EXPOSE 8501
 
-
-#run streamlit app
-CMD["sreamlit","run","app.py"]
-
+# Run Streamlit app
+CMD ["streamlit", "run", "app.py", "--server.address=0.0.0.0"]
